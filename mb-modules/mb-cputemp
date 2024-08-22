@@ -1,3 +1,9 @@
 #!/bin/sh
+temps=($(acpi -t | awk '{print $4}')) 
+final_temp=0
 
-printf "%s°C %s" "$(acpi -t | awk '{print $4}')" " "
+for temp in "${temps[@]}"; do
+	final_temp="$(echo "scale=1;${final_temp}+${temp}" | bc -l)"
+done
+printf "%s°C %s" $(echo "scale=1;${final_temp}/${#temps[@]}" | bc -l) ""
+
