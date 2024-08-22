@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -z $WTTR_LOCATION ] && printf "%s" "Location not set." && exit 0
+
+curl -sf "wttr.in/$WTTR_LOCATION?format=%c%t" | \
+    sed 's/\xef\xb8\x8f//g;s/ \{1,\}/ /g'

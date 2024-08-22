@@ -1,8 +1,8 @@
 /* Define your modules here */
 static const Module modules[] = {
     /*      COMMAND             INTERVAL    */
-    {       "mb-weather",          1500        },
-    {       "mb-news",             300         },
+    /* {       "mb-weather",          1500        },*/
+    /*{       "mb-news",             300         },*/
     {       "mb-cputemp",          5           },
     {       "mb-battery",          30          },
     {       "mb-memory",           5           },
